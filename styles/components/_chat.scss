@@ -1,0 +1,135 @@
+@import "../abstract/variaveis";
+
+@mixin flex-chat() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin self-remetente{
+    justify-self: end;
+}
+
+@mixin chats($radius){
+    grid-column: span 2;
+    max-width: 50%;
+    border-radius: $radius;
+    padding: 10px;
+}
+
+.celular__chat {
+    height: 390px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $cinza-claro;
+    border-radius: 0 0 30px 30px;
+    gap: 5px;
+    font-size: 8px;
+    padding: 10px;
+
+    &__destinatario {
+        @include chats(10px 10px 10px 0);
+        color: $chat-left-color;
+        background-color: $cinza;
+    }
+
+    &__fotos {
+        @include flex-chat();
+        grid-column: span 2;
+        gap: 5px;
+        justify-content: flex-end;
+
+        &__imagem {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+        }
+    }
+
+    &__remetente {
+        grid-column: span 2;
+        @include self-remetente();
+        @include chats(10px 10px 0 10px);
+        background-color: $branco;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    &__cobranca {
+        grid-column: span 2;
+    }
+
+    &__mensage {
+        grid-column: span 2;
+
+        form {
+            @include flex-chat();
+            justify-content: center;
+        }
+    }
+
+    &__cobranca {
+        max-width: 60%;
+        background: linear-gradient(to left, $roxo, $rosa);
+        color: $branco;
+        padding: 5px;
+        border-radius: 10px 10px 10px 0;
+        @include flex-chat();
+        justify-content: space-between;
+        gap: 5px;
+        
+        input {
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            margin: 0 0 0 5px;
+            width: 10px;
+            height: 10px;
+            border: 1px solid $cinza-claro;
+            border-radius: 50%;
+            transform: translateY(-1px);
+            position: relative;
+
+            &:checked {
+                background-color: $cinza-claro;
+            }
+        }
+
+        &__time {
+        margin-right: auto;
+        }
+
+        &__price {
+            font-size: 12px;
+            font-weight: 500;
+            margin-right: 10px;
+        }
+    }
+
+    &__mensage {
+        input {
+            margin-top: 10px;
+            width: 100%;
+            padding: 7px;
+            border: none;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+
+            &::placeholder {
+                font-weight: 500;
+            }
+        }
+
+        button {
+            position: absolute;
+            bottom: 18.5px;
+            right: 15px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+            background-color: $dark-blue;
+            color: $branco;
+        }
+    }
+}
+

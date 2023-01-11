@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: hsl(270deg, 20%, 96%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.background {
+  height: 450px;
+  width: 400px;
+  position: fixed;
+  background: linear-gradient(to bottom, hsl(293deg, 100%, 63%), hsl(264deg, 100%, 61%));
+  border-radius: 0 0 200px 200px;
+  z-index: -1;
+  left: -200px;
+  top: 0;
+}
+
+.background--baixo {
+  background: linear-gradient(to bottom, rgb(244, 191, 255), rgb(252, 223, 255) 40%);
+  border-radius: 0 0 200px 200px;
+  position: fixed;
+  left: auto;
+  right: -150px;
+  top: auto;
+  bottom: 0;
+  transform: rotate(180deg);
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  box-sizing: border-box;
+  margin: 2em 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    gap: 80px;
+  }
+  .background {
+    left: -80px;
+  }
+  .background--baixo {
+    display: block;
+    left: auto;
+  }
+}
+.celular {
+  min-height: 500px;
+  width: 250px;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  border-radius: 30px;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding: 0 10px 10px;
+}
+.celular__container {
+  position: absolute;
+  width: 125px;
+  height: 20px;
+  background-color: #FFFFFF;
+  left: 72.5px;
+  border-radius: 30px;
+  z-index: 1;
+}
+.celular__tela {
+  width: 250px;
+  height: 490px;
+  position: absolute;
+  top: 10px;
+  border-radius: 30px;
+}
+.celular__tela__header {
+  height: 80px;
+  border-radius: 30px 30px 0 0;
+  background: linear-gradient(to right, hsl(264deg, 100%, 61%), hsl(293deg, 100%, 63%));
+  color: #FFFFFF;
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px 10px;
+  box-sizing: border-box;
+  padding-top: 25px;
+}
+.celular__tela__header__voltar {
+  grid-area: 1/1/3/2;
+  margin-left: 10px;
+}
+.celular__tela__header__avatar {
+  grid-area: 1/2/3/3;
+}
+.celular__tela__header__nome {
+  grid-area: 1/3/2/4;
+  align-self: end;
+  font-weight: 500;
+}
+.celular__tela__header__avaliable {
+  grid-area: 2/3/3/4;
+  align-self: start;
+  font-size: 10px;
+}
+.celular__tela__header__configuracao {
+  grid-area: 1/4/3/5;
+  margin-right: 10px;
+}
+.celular__tela__header img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+}
+
+@media screen and (min-width: 1024px) {
+  .celular {
+    justify-self: flex-end;
+    margin: 0;
+  }
+}
+.celular__chat {
+  height: 390px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: hsl(270deg, 20%, 96%);
+  border-radius: 0 0 30px 30px;
+  gap: 5px;
+  font-size: 8px;
+  padding: 10px;
+}
+.celular__chat__destinatario {
+  grid-column: span 2;
+  max-width: 50%;
+  border-radius: 10px 10px 10px 0;
+  padding: 10px;
+  color: hsl(276deg, 55%, 52%);
+  background-color: hsl(0deg, 0%, 89%);
+}
+.celular__chat__fotos {
+  display: flex;
+  align-items: center;
+  grid-column: span 2;
+  gap: 5px;
+  justify-content: flex-end;
+}
+.celular__chat__fotos__imagem {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+.celular__chat__remetente {
+  grid-column: span 2;
+  justify-self: end;
+  grid-column: span 2;
+  max-width: 50%;
+  border-radius: 10px 10px 0 10px;
+  padding: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+.celular__chat__cobranca {
+  grid-column: span 2;
+}
+.celular__chat__mensage {
+  grid-column: span 2;
+}
+.celular__chat__mensage form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.celular__chat__cobranca {
+  max-width: 60%;
+  background: linear-gradient(to left, hsl(264deg, 100%, 61%), hsl(293deg, 100%, 63%));
+  color: #FFFFFF;
+  padding: 5px;
+  border-radius: 10px 10px 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.celular__chat__cobranca input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: transparent;
+  margin: 0 0 0 5px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid hsl(270deg, 20%, 96%);
+  border-radius: 50%;
+  transform: translateY(-1px);
+  position: relative;
+}
+.celular__chat__cobranca input:checked {
+  background-color: hsl(270deg, 20%, 96%);
+}
+.celular__chat__cobranca__time {
+  margin-right: auto;
+}
+.celular__chat__cobranca__price {
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.celular__chat__mensage input {
+  margin-top: 10px;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+}
+.celular__chat__mensage input::-moz-placeholder {
+  font-weight: 500;
+}
+.celular__chat__mensage input:-ms-input-placeholder {
+  font-weight: 500;
+}
+.celular__chat__mensage input::placeholder {
+  font-weight: 500;
+}
+.celular__chat__mensage button {
+  position: absolute;
+  bottom: 18.5px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: hsl(271deg, 36%, 24%);
+  color: #FFFFFF;
+}
+
+.text {
+  margin: 0 2em;
+  text-align: center;
+}
+.text__titulo {
+  color: hsl(271deg, 36%, 24%);
+  font-weight: 500;
+  font-size: 35px;
+  margin-bottom: 32px;
+}
+.text__descricao {
+  color: rgb(165, 165, 165);
+  line-height: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .text {
+    margin: 2em 5em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text {
+    width: 40%;
+    text-align: left;
+    margin: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

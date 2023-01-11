@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
+
+  <title>Frontend Mentor | [Chat-APP]</title>
+
+  <style>
+    footer {
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(293, 100%, 63%);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    
+    <main>
+      <div class="background"></div>
+      <section class="celular">
+        <div class="celular__container">
+        </div>
+        <div class="celular__tela">
+          <div class="celular__tela__header">
+            <i class="fa-solid fa-arrow-left celular__tela__header__voltar"></i>
+            <img src="./images/avatar.jpg" alt="Avatar" class="celular__tela__header__avatar">
+            <p class="celular__tela__header__nome">Samuel Green</p>
+            <p class="celular__tela__header__avaliable">Available to Walk</p>
+            <i class="fa-solid fa-ellipsis-vertical celular__tela__header__configuracao"></i>
+          </div>
+          <div class="celular__chat">
+            <p class="celular__chat__destinatario">That sounds great. I’d be happy with that.</p>
+            <p class="celular__chat__destinatario">Could you send over some pictures of your dog, please?</p>
+            <div class="celular__chat__fotos">
+              <img src="./images/dog-image-1.jpg" alt="A dog" class="celular__chat__fotos__imagem">
+              <img src="./images/dog-image-2.jpg" alt="A dog" class="celular__chat__fotos__imagem">
+              <img src="./images/dog-image-3.jpg" alt="A dog" class="celular__chat__fotos__imagem">
+            </div>
+            <p class="celular__chat__remetente">Here are a few pictures. She’s a happy girl!</p>
+            <p class="celular__chat__remetente">Can you make it?</p>
+            <p class="celular__chat__destinatario">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+            <div class="celular__chat__cobranca">
+              <input type="radio" id="thirty" name="minutes" value="thirty">
+              <label for="thirty" class="celular__chat__cobranca__time">30 minute walk</label>
+              <label for="thirty" class="celular__chat__cobranca__price">$29</label>
+            </div>
+            <div class="celular__chat__cobranca">
+              <input type="radio" id="sixty" name="minutes" value="sixty">
+              <label for="sixty" class="celular__chat__cobranca__time"> 1 hour walk</label>
+              <label for="sixty" class="celular__chat__cobranca__price">$49</label>
+            </div>
+            <div class="celular__chat__mensage">
+              <form>
+                <input type="text" name="mensage" id="mensage" placeholder="Type a message...">
+                <button><i class="fa-solid fa-angle-right"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text">
+        <h1 class="text__titulo">Simple booking</h1>
+        <p class="text__descricao">Stay in touch with our dog walkers through the chat interface. This makes it easy to 
+          discuss arrangements and make bookings. Once the walk has been completed you can rate 
+          your walker and book again all through the chat.</p>
+      </section>
+      <div class="background background--baixo"></div>
+    </main>
+    
+    <footer>
+      <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/lucaspeixotochv" target="_blank">Lucas Peixoto</a>.
+      </div>
+    </footer>
+
+  <script src="./js/all.min.js"></script>
+</body>
+</html>
